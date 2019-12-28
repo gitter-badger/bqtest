@@ -32,8 +32,13 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/build.sbt') }}
       - name: Assembly
-        run: sbt assembly
+        run: |
+          echo $GCP_SA_KEY | base64 --decode > ${HOME}/bqtest-sandbox-key.json
+          export GOOGLE_APPLICATION_CREDENTIALS="${HOME}/bqtest-sandbox-key.json"
+          sbt assembly
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
       - uses: actions/upload-artifact@v1
         with:
           name: my-artifact
-          path: target/scala-2.13/**.jar
+          path: target/scala-2.13/bqtest-assembly-0.1.jar

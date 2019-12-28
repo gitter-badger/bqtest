@@ -1,7 +1,4 @@
-import java.time.format.DateTimeFormatter
-import java.time.{LocalDateTime, ZoneOffset}
-
-name := "bquery"
+name := "bqtest"
 
 version := "0.1"
 
@@ -16,6 +13,3 @@ libraryDependencies += "com.github.scopt" %% "scopt" % "3.7.1"
 
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.1.0"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.0" % "test"
-
-test in assembly := {}
-assemblyJarName in assembly := s"${name.value}-${LocalDateTime.now(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmm"))}.jar"
