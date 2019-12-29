@@ -1,4 +1,7 @@
 # bqtest
+
+[![Join the chat at https://gitter.im/na0fu3y/bqtest](https://badges.gitter.im/na0fu3y/bqtest.svg)](https://gitter.im/na0fu3y/bqtest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <p align="left">
   <a href="https://github.com/na0fu3y/bqtest"><img alt="GitHub Actions status" src="https://github.com/na0fu3y/bqtest/workflows/Scala%20CD/badge.svg"></a>
 </p>
