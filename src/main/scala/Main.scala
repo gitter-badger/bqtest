@@ -1,18 +1,19 @@
 import java.io.File
 
 case class Config(
-                   sql_file: File = new File("."),
-                   expected_file: File = new File("."),
-                   project_id: String = "",
-                   key_file: File = new File("."),
-                   withs: Map[String, String] = Map(),
-                   maxCount: Int = -1,
-                   verbose: Boolean = false,
-                   debug: Boolean = false,
-                   mode: String = "",
-                   files: Seq[File] = Seq(),
-                   keepalive: Boolean = false,
-                   jars: Seq[File] = Seq())
+    sql_file: File = new File("."),
+    expected_file: File = new File("."),
+    project_id: String = "",
+    key_file: File = new File("."),
+    withs: Map[String, String] = Map(),
+    maxCount: Int = -1,
+    verbose: Boolean = false,
+    debug: Boolean = false,
+    mode: String = "",
+    files: Seq[File] = Seq(),
+    keepalive: Boolean = false,
+    jars: Seq[File] = Seq()
+)
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -31,7 +32,7 @@ object Main {
         .action((x, c) => c.copy(expected_file = x))
         .text("expected_file is a required file property")
 
-      opt[Map[String, String]]('w',"with")
+      opt[Map[String, String]]('w', "with")
         .valueName("t1=<avro_file>,t2=<avro_file>...")
         .action((x, c) => c.copy(withs = x))
         .text("other arguments")
@@ -44,7 +45,6 @@ object Main {
         .valueName("<key_file>")
         .action((x, c) => c.copy(key_file = x))
         .text("key_file is a required file property")
-
 
       help('h', "help").text("prints this usage text")
 

@@ -28,6 +28,9 @@ jobs:
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/build.sbt') }}
+    - name: check code format
+      run: |
+        sbt scalafmtCheckAll
     - name: Run tests
       run: |
         echo $GCP_SA_KEY | base64 --decode > ${HOME}/bqtest-sandbox-key.json

@@ -1,4 +1,9 @@
-import com.google.cloud.bigquery.{BigQueryOptions, FieldValueList, JobInfo, QueryJobConfiguration}
+import com.google.cloud.bigquery.{
+  BigQueryOptions,
+  FieldValueList,
+  JobInfo,
+  QueryJobConfiguration
+}
 import scala.jdk.CollectionConverters._
 
 object BigQueryStandardSQL {
