@@ -1,4 +1,7 @@
 # bqtest
+<p align="left">
+  <a href="https://github.com/na0fu3y/bqtest"><img alt="GitHub Actions status" src="https://github.com/na0fu3y/bqtest/workflows/Scala%20CD/badge.svg"></a>
+</p>
 Test Standard SQL on BigQuery
 
 # Usage (Not implemented)
